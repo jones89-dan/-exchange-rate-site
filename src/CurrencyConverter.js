@@ -1,6 +1,6 @@
 // CurrencyConverter.js
 import React from 'react';
-import Chart from 'chart.js';
+import {Chart} from 'chart.js';
 import currencies from './utils/currencies';
 import { checkStatus, json } from './utils/fetchUtils';
 
