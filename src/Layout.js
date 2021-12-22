@@ -7,6 +7,7 @@ const Layout = (props) => {
     <React.Fragment>
       <nav className="navbar navbar-light bg-light">
         <Link to="/"><span className="navbar-brand mb-0 h1">Currency Exchange Rates</span></Link>
+        <Link to="/singleConversion"><span className="navbar-brand mb-0 h1">Single Conversion</span></Link>
       </nav>
       <div className="container py-3">
         {props.children}

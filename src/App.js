@@ -15,8 +15,8 @@ const App = () => {
         <Switch>
 
           <Route path="/" exact component={Home} />
-          
           <Route path="/currencyconverter" component={CurrencyConverter} />
+          <Route path="/singleConversion"  component={SingleConversion} />
           <Route render={() => <h1>404 Not found</h1>} />
         </Switch>
       </Layout>
