@@ -1,6 +1,8 @@
 // Layout.js
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { MarkGithubIcon } from "@primer/octicons-react";
 
 const Layout = (props) => {
   return (
@@ -17,7 +19,7 @@ const Layout = (props) => {
           <a className="badge badge-dark" href="https://github.com/Altcademy/exchange-rate-site" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
         <div>
-          <span className="mr-3 text-secondary">Built by <a href="https://github.com/jones89-dan" target="_blank" rel="noopener noreferrer">jones89-dan</a> </span>
+          <span className="mr-3 text-secondary">Built by <MarkGithubIcon size={16} /> <a href="https://github.com/jones89-dan" target="_blank" rel="noopener noreferrer">jones89-dan</a> </span>
         </div>
       </footer>
     </React.Fragment>
