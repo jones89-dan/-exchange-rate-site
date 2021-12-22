@@ -1,1 +1,11 @@
-a { color: inherit; } 
+a { color: inherit; }
+
+.color1 {
+  color: #003030 !important;
+  height: 15px;
+}
+
+.color2 {
+  color: #019992 !important;
+  height: 15px;
+}

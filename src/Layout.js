@@ -11,6 +11,12 @@ const Layout = (props) => {
         <Link to="/"><span className="navbar-brand mb-0 h1 text-white">Currency Exchange Rates</span></Link>
         <Link to="/singleConversion"><span className="navbar-brand mb-0 h1 text-white">Single Conversion</span></Link>
       </nav>
+      <div class="container-fluid">
+            <div class="row color1" style={{ color: '#003030'}}>
+            </div>
+            <div class="row color2">
+            </div>
+      </div>
       <div className="container py-3">
         {props.children}
       </div>
