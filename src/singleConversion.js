@@ -4,9 +4,50 @@ import currencies from './utils/currencies';
 import { checkStatus, json } from './utils/fetchUtils';
 import CurrencyConverter from './CurrencyConverter';
 
-render() {
-  const { rate, baseAcronym, baseValue, quoteAcronym, quoteValue, loading } = this.state;
+class SingleConversion extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    const params = new URLSearchParams(props.location.search);
+
+    this.state = {
+      rate: 0,
+      baseAcronym: params.get('base') || 'USD',
+      baseValue: 0,
+      quoteAcronym: params.get('quote') || 'JPY',
+      quoteValue: 0,
+      loading: false,
+    };
+
+    this.chartRef = React.createRef();
+  }
+
+  getRate = (base, quote) => {
+    this.setState({ loading: true });
+    fetch(`https://altexchangerateapi.herokuapp.com/latest?from=${base}&to=${quote}`)
+      .then(checkStatus)
+      .then(json)
+      .then(data => {
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        const rate = data.rates[quote];
+
+        this.setState({
+          rate,
+          baseValue: 1,
+          quoteValue: Number((1 * rate).toFixed(3)),
+          loading: false,
+        });
+      })
+      .catch(error => console.error(error.message));
+  }
+
+render() {
+
+    const { rate, baseAcronym, baseValue, quoteAcronym, quoteValue, loading } = this.state;
   const currencyOptions = Object.keys(currencies).map(currencyAcronym => <option key={currencyAcronym} value={currencyAcronym}>{currencyAcronym}</option>);
 
   return (
@@ -48,7 +89,7 @@ render() {
     </React.Fragment>
   )
 }
-
+}
 
 
 export default SingleConversion
