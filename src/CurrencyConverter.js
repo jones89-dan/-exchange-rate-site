@@ -160,6 +160,7 @@ class CurrencyConverter extends React.Component {
             </select>
             <div className="input-group">
               <div className="input-group-prepend">
+               <img className={`small_flag`} src={`/image/${currencies[baseAcronym].name}.png`} alt=""></img>
                 <div className="input-group-text">{currencies[baseAcronym].symbol}</div>
               </div>
               <input id="base" className="form-control form-control-lg" value={baseValue} onChange={this.changeBaseValue} type="number" />
