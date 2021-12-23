@@ -3,6 +3,7 @@ import React from 'react';
 import {Chart} from 'chart.js';
 import currencies from './utils/currencies';
 import { checkStatus, json } from './utils/fetchUtils';
+import { ArrowSwitchIcon } from "@primer/octicons-react";
 
 class CurrencyConverter extends React.Component {
   constructor(props) {
@@ -167,7 +168,7 @@ class CurrencyConverter extends React.Component {
             <small className="text-secondary">{currencies[baseAcronym].name}</small>
           </div>
           <div className="col-md-2 py-3 d-flex justify-content-center align-items-center">
-            <h3>=</h3>
+            <h3><ArrowSwitchIcon size={24} /></h3>
           </div>
           <div className="form-group col-md-5 mb-0">
             <select value={quoteAcronym} onChange={this.changeQuoteAcronym} className="form-control form-control-lg mb-2" disabled={loading}>
