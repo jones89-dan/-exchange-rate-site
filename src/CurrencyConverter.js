@@ -149,9 +149,9 @@ class CurrencyConverter extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="text-center p-3">
-          <h2 className="mb-2">Currency Converter</h2>
-          <h4>1 {baseAcronym} to 1 {quoteAcronym} = {rate.toFixed(4)} {currencies[quoteAcronym].name}</h4>
+        <div className="text-center p-3 bg-secondary">
+          <h2 className="mb-2 text-white">Currency Converter</h2>
+           <h4 className = "text-white"> <img src={`/image/${baseAcronym}.png`} alt=""></img> 1 {baseAcronym} to 1 {quoteAcronym} = {rate.toFixed(4)} {currencies[quoteAcronym].name} <img src={`/image/${quoteAcronym}.png`} alt=""></img></h4>
         </div>
         <form className="form-row p-3 mb-4 bg-light justify-content-center">
           <div className="form-group col-md-5 mb-0">
@@ -160,7 +160,6 @@ class CurrencyConverter extends React.Component {
             </select>
             <div className="input-group">
               <div className="input-group-prepend">
-               <img className={`small_flag`} src={`/image/${currencies[baseAcronym].name}.png`} alt=""></img>
                 <div className="input-group-text">{currencies[baseAcronym].symbol}</div>
               </div>
               <input id="base" className="form-control form-control-lg" value={baseValue} onChange={this.changeBaseValue} type="number" />
