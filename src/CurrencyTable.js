@@ -8,18 +8,18 @@ const CurrencyTable = (props) => {
     return null;
   }
   return (
-    <table className="table table-sm bg-light mt-4">
+    <table className="table table-sm mt-4 bg-secondary">
       <thead>
         <tr>
           <th scope="col"></th>
-          <th scope="col" className="text-right pr-4 py-2">1.00 {base}</th>
+          <th scope="col" className="text-right pr-4 py-2 bg-secondary text-white">1.00 {base}</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="bg-secondary">
         {rates.map(currency =>
           <tr key={currency.acronym}>
-            <td className="pl-4 py-2">{currency.name} <small>({currency.acronym})</small></td>
-            <td className="text-right pr-4 py-2"><Link to={`/currencyconverter?base=${base}&quote=${currency.acronym}`}>{currency.rate.toFixed(6)}</Link></td>
+            <td className="pl-4 py-2 text-white"><img src={`/image/${currency.acronym}.png`} alt=""></img>{currency.name} <small>({currency.acronym})</small></td>
+            <td className="text-right pr-4 py-2 text-white"><Link to={`/currencyconverter?base=${base}&quote=${currency.acronym}`}>{currency.rate.toFixed(6)}</Link></td>
           </tr>
         )}
       </tbody>
